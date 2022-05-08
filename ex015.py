@@ -1,0 +1,5 @@
+dias = int(input("Informe a quantidade de dias o carro foi alugado: "))
+km = float(input("Por quantos quilometros o carro foi rodado? "))
+diaria = float(input("Informe o valor da diaria R$"))
+valor = (dias * diaria) + (km * 0.15)
+print("Com uma diaria de R${:.2f}, e R$0.15 por km o valor total é R${:.2f}".format(diaria, valor))
