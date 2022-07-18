@@ -1,0 +1,3 @@
+thiago: 1
+jose: 20
+luke: 30

@@ -1,15 +1,21 @@
 from .leia_dados import leiaInt
 from .escreva_dados import escreva
+from .arquivos import *
 
 from time import sleep
 
 
-def menu():
+def menu(arquivo):
     opções = {
         1: "Ver pessoas cadastradas",
         2: "Cadastrar novas pessoas",
         3: "Sair do sistema"
     }
+
+    if not arquivoExiste(arquivo):
+        criarArquivo(arquivo)
+
+    escreva("SISTEMA ARQUIVO v1.0")
 
     escreva("MENU PRINCIPAL")
 
@@ -24,7 +30,9 @@ def menu():
         opção = leiaInt("\033[32mSua opção:\033[m ")
 
         if opção == 1:
-            escreva("Opção 1")
+            # Listar conteudo de um arquivo.
+            escreva("PESSOAS CADASTRADAS")
+            lerArquivo(arquivo)
 
         elif opção == 2:
             escreva("Opção 2")
