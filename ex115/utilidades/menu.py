@@ -35,9 +35,24 @@ def menu(arquivo):
             lerArquivo(arquivo)
 
         elif opção == 2:
-            escreva("Opção 2")
+            # Editar o conteudo de um arquivo.
+            escreva("NOVO CADASTRO")
+            nome = str(input("Nome: ")).strip().capitalize()
+            idade = leiaInt("Idade: ")
+
+            if nome == "":
+                nome = "Desconhecido"
+
+            cadastro = f"{nome}:{idade}"
+
+            print(f"Cadastrando {nome}...")
+
+            editarArquivo(arquivo, cadastro)
+
+            print(f"{nome} cadastrado!")
 
         elif opção == 3:
+            # Saindo do programa.
             escreva("Saindo do sistema... Até logo!")
             rodando = False
 
